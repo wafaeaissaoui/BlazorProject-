@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using BlazorApp2.Models
 
 <PageTitle>Index</PageTitle>
 
@@ -6,4 +7,38 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@*@*<SurveyPrompt Title="How is Blazor working for you?" />
+
+@if (empList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in empList)
+            {
+                <tr>
+                    <td>@emp.id</td>
+                    <td>@emp.firstName  __ @emp.lastName</td>
+                    <td>@emp.age</td>
+             
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+*@
+@*@code {
+    employe[] empList;
+
+    //protected override async Task OnInitializedAsync() => empList = await context.Employes.;
+}*@
